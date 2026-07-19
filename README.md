@@ -207,10 +207,10 @@ Average Consumption: 2.1 kWh/hour
 
 ---
 
-# 👨‍💻 Author
+# 👨‍💻 Autho
 
 **Namrata Kundu**
 
-**LinkedIn:** *https://www.linkedin.com/in/namrata-kundu-44aa39318/*
+**LinkedIn:** *https://www.linkedin.com/in/namrata-21-kundu/*
 
 **GitHub:** *https://github.com/namrata-21-kundu*
