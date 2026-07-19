@@ -1,4 +1,4 @@
-# ⚡ Electricity Intelligence Agent
+# ⚡ Electricity Data Analyzer
 
 A Python-based data analytics application that helps users understand their electricity consumption through data analysis and AI-powered insights. Users can upload electricity usage data, store it in MySQL, visualize consumption patterns, estimate electricity costs, detect unusual usage, and ask natural-language questions using an AI assistant.
 
@@ -6,7 +6,7 @@ A Python-based data analytics application that helps users understand their elec
 
 # 📖 Description
 
-Electricity Intelligence Agent is a CLI-based analytics tool built using Python. It allows users to upload electricity consumption data in CSV format, store it in a MySQL database, and generate useful insights through data analysis and visualization.
+Electricity Data Analyzer is a CLI-based analytics tool built using Python. It allows users to upload electricity consumption data in CSV format, store it in a MySQL database, and generate useful insights through data analysis and visualization.
 
 The project uses SQL, Pandas, NumPy, and Matplotlib to analyze electricity usage and integrates the Gemini API to explain results in simple, natural language. The goal is to transform raw electricity data into meaningful insights that help users better understand their consumption patterns.
 
@@ -209,8 +209,8 @@ Average Consumption: 2.1 kWh/hour
 
 # 👨‍💻 Author
 
-**Your Name**
+**Namrata Kundu**
 
-**LinkedIn:** *(Add your LinkedIn profile)*
+**LinkedIn:** *https://www.linkedin.com/in/namrata-kundu-44aa39318/*
 
-**GitHub:** *(Add your GitHub profile)*
+**GitHub:** *https://github.com/namrata-21-kundu*
