@@ -1,16 +1,39 @@
-from db.connection import connect_db
+import argparse
+
 from utils.loader import load_csv
-from analysis.trends import get_data
+from analysis.trends import get_data, calculate_summary
 
-connection = connect_db()
 
-if connection:
-    print("Database connection successful!")
-    connection.close()
-    print("Connection closed.")
-else:
-    print("Connection failed.")
+def main():
+    parser = argparse.ArgumentParser(
+        description="Electricity Analytics Platform"
+    )
 
-load_csv("data/sample_usage.csv")
+    parser.add_argument(
+        "command",
+        choices=["load", "summary"],
+        help="Command to execute"
+    )
 
-get_data()
+    parser.add_argument(
+        "file",
+        nargs="?",
+        help="Path to CSV file (required for load command)"
+    )
+
+    args = parser.parse_args()
+
+    if args.command == "load":
+        if not args.file:
+            print("Please provide a CSV file.")
+            return
+
+        load_csv(args.file)
+
+    elif args.command == "summary":
+        df = get_data()
+        calculate_summary(df)
+
+
+if __name__ == "__main__":
+    main()
