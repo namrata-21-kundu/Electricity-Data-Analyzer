@@ -1,0 +1,18 @@
+# Virtual Environment
+venv/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated charts
+charts/
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS
+.DS_Store
