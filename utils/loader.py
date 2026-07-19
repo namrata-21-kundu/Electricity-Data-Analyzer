@@ -12,16 +12,15 @@ def load_csv(file_path):
     VALUES (%s, %s)
     """
 
-    first_row = df.iloc[0]
+    for index, row in df.iterrows():    #access one row at a time
+        cursor.execute(
+            query,
+            (row["timestamp"], row["usage_kwh"])
+        )
 
-    cursor.execute(
-    query,
-    (first_row["timestamp"], first_row["usage_kwh"])
-    )
-    
     connection.commit()
 
     cursor.close()
     connection.close()
 
-    print("First row inserted successfully!")
+    print(f"{len(df)} rows inserted successfully.")
