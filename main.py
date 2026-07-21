@@ -5,8 +5,8 @@ from analysis.trends import get_data, calculate_summary, plot_trend
 from analysis.peak_hours import get_peak_hours
 from analysis.cost import get_cost_summary
 from analysis.anomalies import detect_anomalies
-from agent.router import route_query
-from agent.explain import explain
+from assistant.router import route_query
+from assistant.explain import explain
 
 def main():
     parser = argparse.ArgumentParser(

@@ -63,7 +63,7 @@ Gemini API generates a natural-language explanation
 # 📁 Project Structure
 
 ```
-electricity-intelligence-agent/
+electricity-intelligence-assistant/
 │
 ├── main.py
 ├── db/
@@ -74,7 +74,7 @@ electricity-intelligence-agent/
 │   ├── peak_hours.py
 │   ├── cost.py
 │   └── anomalies.py
-├── agent/
+├── assistant/
 │   ├── router.py
 │   └── explain.py
 ├── charts/
@@ -89,9 +89,9 @@ electricity-intelligence-agent/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/electricity-intelligence-agent.git
+git clone https://github.com/<your-username>/electricity-intelligence-assistant.git
 
-cd electricity-intelligence-agent
+cd electricity-intelligence-assistant
 ```
 
 ### 2. Install dependencies
@@ -114,7 +114,7 @@ Create a `.env` file in the project folder.
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
-DB_NAME=electricity_agent
+DB_NAME=electricity_assistant
 
 GEMINI_API_KEY=your_api_key
 ```
@@ -201,7 +201,7 @@ Average Consumption: 2.1 kWh/hour
 - Convert the CLI application into a web application using Flask or FastAPI
 - Add an interactive dashboard for real-time visualization
 - Support multiple users and electricity meters
-- Improve the AI agent with tool calling and conversation memory
+- Improve the AI assistant with tool calling and conversation memory
 - Add electricity usage forecasting and bill prediction
 - Deploy the application to a cloud platform
 
