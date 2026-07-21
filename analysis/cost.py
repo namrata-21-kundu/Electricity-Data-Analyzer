@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from analysis.trends import get_data
-
-RATE_PER_UNIT = 8
+from config import RATE_PER_UNIT
 
 def get_cost_summary():
     df = get_data()

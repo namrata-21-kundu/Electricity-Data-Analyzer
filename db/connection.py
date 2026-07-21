@@ -1,17 +1,18 @@
 import mysql.connector
 from mysql.connector import Error
-import os   #reads values from .env
-from dotenv import load_dotenv  #loads environment variables into py
+#import os   #reads values from .env
+#from dotenv import load_dotenv  #loads environment variables into py
+from config import DB_HOST, DB_USER, DB_PASSWORD, DB_NAME
 
-load_dotenv()
+#load_dotenv()
 
 def connect_db():
     try:
         connection = mysql.connector.connect(
-            host=os.getenv("DB_HOST"),
-            user=os.getenv("DB_USER"),
-            password=os.getenv("DB_PASSWORD"),
-            database=os.getenv("DB_NAME")
+            host=DB_HOST,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            database=DB_NAME
         )
 
         if connection.is_connected():

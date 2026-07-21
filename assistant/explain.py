@@ -1,14 +1,11 @@
-import os
-from dotenv import load_dotenv
+#import os
+#from dotenv import load_dotenv
 from google import genai
+from config import GOOGLE_API_KEY, GEMINI_MODEL
 
-load_dotenv()
+#load_dotenv()
 
-client = genai.Client(
-    api_key=os.getenv("GOOGLE_API_KEY")
-)
-
-MODEL_NAME = "gemini-3.6-flash"
+client = genai.Client(api_key=GOOGLE_API_KEY)
 
 def explain(question, analysis_result):
     prompt = f"""
@@ -30,7 +27,7 @@ Do not invent any values.
 """
 
     response = client.models.generate_content(
-        model=MODEL_NAME,
+        model=GEMINI_MODEL,
         contents=prompt
     )
 
