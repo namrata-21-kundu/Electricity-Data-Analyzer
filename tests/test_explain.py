@@ -1,4 +1,4 @@
-from explain import explain
+from assistant.explain import explain
 
 result = {
     "total_units": 345,
