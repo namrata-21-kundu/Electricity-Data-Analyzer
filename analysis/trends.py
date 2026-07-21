@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from db.connection import connect_db
 
 
@@ -27,3 +28,25 @@ def calculate_summary(df):
     print(f"Average Usage : {average_usage:.2f} kWh")
     print(f"Maximum Usage : {maximum_usage:.2f} kWh")
     print(f"Minimum Usage : {minimum_usage:.2f} kWh")
+
+def plot_trend(df):
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+
+    plt.figure(figsize=(10, 5))
+
+    plt.plot(df["timestamp"], df["usage_kwh"], marker="o")
+
+    plt.title("Electricity Usage Trend")
+    plt.xlabel("Timestamp")
+    plt.ylabel("Usage (kWh)")
+    plt.xticks(rotation=45)
+
+    plt.grid(True)
+
+    plt.tight_layout()
+
+    plt.savefig("charts/trend.png")
+
+    plt.close()
+
+    print("Chart saved to charts/trend.png")

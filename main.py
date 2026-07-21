@@ -1,8 +1,8 @@
 import argparse
 
 from utils.loader import load_csv
-from analysis.trends import get_data, calculate_summary
-
+from analysis.trends import get_data, calculate_summary, plot_trend
+from analysis.peak_hours import get_peak_hours
 
 def main():
     parser = argparse.ArgumentParser(
@@ -11,7 +11,7 @@ def main():
 
     parser.add_argument(
         "command",
-        choices=["load", "summary"],
+        choices=["load", "summary", "trend", "peak"],
         help="Command to execute"
     )
 
@@ -33,7 +33,13 @@ def main():
     elif args.command == "summary":
         df = get_data()
         calculate_summary(df)
+    
+    elif args.command == "trend":
+        df = get_data()
+        plot_trend(df)
 
+    elif args.command == "peak":
+        get_peak_hours()
 
 if __name__ == "__main__":
     main()
