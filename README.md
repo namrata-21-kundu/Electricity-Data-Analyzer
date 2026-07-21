@@ -1,216 +1,292 @@
 # ⚡ Electricity Data Analyzer
 
-A Python-based data analytics application that helps users understand their electricity consumption through data analysis and AI-powered insights. Users can upload electricity usage data, store it in MySQL, visualize consumption patterns, estimate electricity costs, detect unusual usage, and ask natural-language questions using an AI assistant.
+> A Python-based CLI application for analyzing electricity consumption using MySQL, Pandas, Matplotlib, and Google Gemini AI.
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red)
+![Gemini](https://img.shields.io/badge/Google-Gemini%20API-purple)
+![Status](https://img.shields.io/badge/Status-v1.0-success)
 
 ---
 
-# 📖 Description
+# 📖 Project Overview
 
-Electricity Data Analyzer is a CLI-based analytics tool built using Python. It allows users to upload electricity consumption data in CSV format, store it in a MySQL database, and generate useful insights through data analysis and visualization.
+Electricity Data Analyzer is a command-line application that transforms raw electricity usage data into meaningful insights.
 
-The project uses SQL, Pandas, NumPy, and Matplotlib to analyze electricity usage and integrates the Gemini API to explain results in simple, natural language. The goal is to transform raw electricity data into meaningful insights that help users better understand their consumption patterns.
+Users can upload electricity consumption data from CSV files, store it in a MySQL database, analyze usage patterns, visualize trends, estimate electricity costs, detect anomalies, and receive AI-powered explanations using the Google Gemini API.
+
+The project combines traditional data analytics with Generative AI to make electricity consumption reports easier to understand.
 
 ---
 
 # ✨ Features
 
 - Upload electricity usage data from CSV files
-- Store data in a MySQL database
+- Store data in MySQL
 - Analyze electricity consumption trends
-- Identify peak usage hours
-- Estimate electricity costs
+- Detect peak usage hours
+- Estimate electricity bills
 - Detect unusual consumption spikes
-- Generate charts automatically
-- Ask questions in natural language using AI
-- Modular and easy-to-expand project structure
+- Automatically generate charts
+- AI-powered natural language explanations using Gemini
+- Modular and scalable project architecture
 
 ---
 
-# 🛠 Tech Stack
+# 🖥 Demo
 
-| Category | Technology |
-|----------|------------|
-| Programming Language | Python |
-| Database | MySQL |
-| Data Analysis | Pandas, NumPy |
-| Data Visualization | Matplotlib |
-| AI Integration | Google Gemini API |
-| Environment Variables | python-dotenv |
-| Version Control | Git & GitHub |
+## Load CSV
+
+```bash
+python main.py load data/sample_usage.csv
+```
+
+## Trend Analysis
+
+```bash
+python main.py trend
+```
+
+## Peak Hours
+
+```bash
+python main.py peak
+```
+
+## Cost Estimation
+
+```bash
+python main.py cost
+```
+
+## Detect Anomalies
+
+```bash
+python main.py anomalies
+```
+
+## Ask the AI Assistant
+
+```bash
+python main.py ask "Why was my electricity bill high?"
+```
+
+---
+
+# 📷 Screenshots
+
+## Trend Analysis
+
+![Trend](assets/trend.png)
+
+## Peak Usage Hours
+
+![Peak Hours](assets/peak_hours.png)
+
+## Cost Breakdown
+
+![Cost](assets/cost_breakdown.png)
+
+## Anomaly Detection
+
+![Anomalies](assets/anomalies.png)
+
+## AI Assistant
+
+![CLI Demo](assets/cli_demo.png)
 
 ---
 
 # ⚙️ Project Workflow
 
-```
+```text
 CSV File
-    ↓
-Load data into MySQL
-    ↓
-Python retrieves the data
-    ↓
-Pandas & NumPy perform analysis
-    ↓
-Matplotlib generates charts
-    ↓
+      │
+      ▼
+Load into MySQL Database
+      │
+      ▼
+Retrieve using SQL
+      │
+      ▼
+Analyze using Pandas & NumPy
+      │
+      ▼
+Generate Charts with Matplotlib
+      │
+      ▼
 User asks a question
-    ↓
-Gemini API generates a natural-language explanation
+      │
+      ▼
+Google Gemini explains the results
 ```
 
 ---
 
-# 📁 Project Structure
+# 📂 Project Structure
 
-```
-electricity-intelligence-assistant/
+```text
+ElectricityDataAnalyser/
 │
-├── main.py
+├── analysis/
+│   ├── __init__.py
+│   ├── anomalies.py
+│   ├── cost.py
+│   ├── peak_hours.py
+│   └── trends.py
+│
+├── assistant/
+│   ├── __init__.py
+│   ├── explain.py
+│   └── gemini_client.py
+│
+├── assets/
+├── charts/
+├── data/
 ├── db/
+│   ├── __init__.py
 │   ├── connection.py
 │   └── schema.sql
-├── analysis/
-│   ├── trends.py
-│   ├── peak_hours.py
-│   ├── cost.py
-│   └── anomalies.py
-├── assistant/
-│   ├── router.py
-│   └── explain.py
-├── charts/
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_explain.py
+│   └── test_gemini.py
+│
+├── utils/
+│   ├── __init__.py
+│   └── loader.py
+│
+├── .env.example
+├── config.py
+├── main.py
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# 🚀 Setup
+# 🛠 Tech Stack
 
-### 1. Clone the repository
+| Category | Technology |
+|-----------|------------|
+| Programming Language | Python |
+| Database | MySQL |
+| Data Analysis | Pandas, NumPy |
+| Data Visualization | Matplotlib |
+| AI | Google Gemini API |
+| Configuration | python-dotenv |
+| Version Control | Git & GitHub |
+
+---
+
+# 🚀 Installation
+
+### Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/electricity-intelligence-assistant.git
+git clone https://github.com/namrata-21-kundu/ElectricityDataAnalyser.git
 
-cd electricity-intelligence-assistant
+cd ElectricityDataAnalyser
 ```
 
-### 2. Install dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Set up MySQL
+### Configure environment variables
+
+Copy:
+
+```text
+.env.example
+```
+
+to
+
+```text
+.env
+```
+
+Then fill in your database credentials and Gemini API key.
+
+### Create the database
 
 ```bash
 mysql -u root -p < db/schema.sql
 ```
 
-### 4. Configure environment variables
-
-Create a `.env` file in the project folder.
-
-```env
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=electricity_assistant
-
-GEMINI_API_KEY=your_api_key
-```
-
 ---
 
-# ▶️ Usage
-
-### Load electricity usage data
-
-```bash
-python main.py load usage_data.csv
-```
-
-### View consumption trends
-
-```bash
-python main.py trend
-```
-
-### Find peak usage hours
-
-```bash
-python main.py peak
-```
-
-### Generate estimated cost
-
-```bash
-python main.py cost
-```
-
-### Detect unusual electricity usage
-
-```bash
-python main.py anomalies
-```
-
-### Ask the AI assistant
-
-```bash
-python main.py ask "Why was my electricity bill high this month?"
-```
-
----
-
-# 📂 Expected CSV Format
+# 📄 Expected CSV Format
 
 ```csv
 timestamp,usage_kwh
 2026-01-01 00:00:00,0.42
 2026-01-01 01:00:00,0.38
 2026-01-01 02:00:00,0.45
-...
 ```
 
 ---
 
-# 📈 Sample Output
+# 🧠 AI Integration
 
-```
-$ python main.py trend
+The project integrates the Google Gemini API to generate human-readable explanations for electricity usage analysis.
 
-Chart saved to charts/monthly_trend.png
+The AI assistant can explain:
 
-Total Usage: 342 kWh
-Estimated Cost: ₹2,850
-```
+- Cost summaries
+- Consumption trends
+- Peak usage hours
+- Anomaly detection results
 
-```
-$ python main.py peak
-
-Chart saved to charts/peak_hours.png
-
-Peak Usage Hours:
-7 PM – 9 PM
-Average Consumption: 2.1 kWh/hour
-```
+It also suggests practical ways to reduce electricity consumption based on the analysis.
 
 ---
 
-# 🚀 Future Enhancements
+# 🚀 Roadmap
 
-- Convert the CLI application into a web application using Flask or FastAPI
-- Add an interactive dashboard for real-time visualization
-- Support multiple users and electricity meters
-- Improve the AI assistant with tool calling and conversation memory
-- Add electricity usage forecasting and bill prediction
-- Deploy the application to a cloud platform
+## ✅ Version 1.0 (Current)
+
+- CLI application
+- MySQL integration
+- Data analytics
+- Chart generation
+- AI-powered explanations
+
+## 🔄 Version 2.0 (Planned)
+
+- Streamlit dashboard
+- Interactive charts
+- File upload through UI
+- Downloadable reports
+- Enhanced AI assistant
+- Support for natural-language analytics across multiple reports
+
+## 🚀 Version 3.0 (Future Vision)
+
+- Transform the AI assistant into an **agentic AI system**
+- Enable autonomous task planning and execution
+- Allow the assistant to choose and invoke analysis tools automatically
+- Support multi-step reasoning over electricity consumption data
+- Generate comprehensive reports with actionable recommendations
+- Integrate external data sources (e.g., weather or tariff information) for richer insights
 
 ---
 
-# 👨‍💻 Autho
+# 👨‍💻 Author
 
 **Namrata Kundu**
 
-**LinkedIn:** *https://www.linkedin.com/in/namrata-21-kundu/*
+- GitHub: https://github.com/namrata-21-kundu
+- LinkedIn: https://www.linkedin.com/in/namrata-21-kundu/
 
-**GitHub:** *https://github.com/namrata-21-kundu*
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
