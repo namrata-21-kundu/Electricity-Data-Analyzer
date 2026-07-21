@@ -17,5 +17,4 @@ charts/
 # macOS
 .DS_Store
 
-# Generated charts
 charts/*.png
