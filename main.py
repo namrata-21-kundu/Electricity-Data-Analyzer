@@ -5,6 +5,8 @@ from analysis.trends import get_data, calculate_summary, plot_trend
 from analysis.peak_hours import get_peak_hours
 from analysis.cost import get_cost_summary
 from analysis.anomalies import detect_anomalies
+from agent.router import route_query
+from agent.explain import explain
 
 def main():
     parser = argparse.ArgumentParser(
@@ -13,14 +15,22 @@ def main():
 
     parser.add_argument(
         "command",
-        choices=["load","summary","trend","peak","cost","anomalies"],
+        choices=[
+            "load",
+            "summary",
+            "trend",
+            "peak",
+            "cost",
+            "anomalies",
+            "ask"
+        ],
         help="Command to execute"
     )
 
     parser.add_argument(
-        "file",
-        nargs="?",
-        help="Path to CSV file (required for load command)"
+    "input",
+    nargs="?",
+    help="CSV path (for load) or question (for ask)"
     )
 
     args = parser.parse_args()
@@ -30,7 +40,7 @@ def main():
             print("Please provide a CSV file.")
             return
 
-        load_csv(args.file)
+        load_csv(args.input)
 
     elif args.command == "summary":
         df = get_data()
@@ -48,6 +58,19 @@ def main():
 
     elif args.command == "anomalies":
         detect_anomalies()
+
+    elif args.command == "ask":
+        if not args.input:
+            print("Please enter a question.")
+            return
+
+        question = args.input
+        analysis = route_query(question)
+        answer = explain(question, analysis)
+
+        print("\n🤖 AI Explanation")
+        print("-" * 40)
+        print(answer)
 
 if __name__ == "__main__":
     main()
