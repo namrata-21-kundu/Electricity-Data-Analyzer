@@ -58,3 +58,8 @@ def detect_anomalies():
     plt.close()
 
     print("\nChart saved to charts/anomalies.png")
+
+    return {
+    "threshold": threshold,
+    "anomalies": anomalies.to_dict(orient="records")
+    }

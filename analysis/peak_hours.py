@@ -23,7 +23,7 @@ def get_peak_hours():
     plt.xlabel("Hour of Day")
     plt.ylabel("Average Usage (kWh)")
     plt.xticks(range(24))
-    
+
     plt.tight_layout()
 
     plt.savefig("charts/peak_hours.png")
@@ -32,3 +32,7 @@ def get_peak_hours():
 
     print("Chart saved to charts/peak_hours.png")
 
+    return {
+    "peak_hour": peak_hour,
+    "average_usage": peak_usage
+    }

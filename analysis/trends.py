@@ -29,6 +29,13 @@ def calculate_summary(df):
     print(f"Maximum Usage : {maximum_usage:.2f} kWh")
     print(f"Minimum Usage : {minimum_usage:.2f} kWh")
 
+    return {
+    "total_usage": total_usage,
+    "average_usage": average_usage,
+    "maximum_usage": maximum_usage,
+    "minimum_usage": minimum_usage
+    }
+
 def plot_trend(df):
     df["timestamp"] = pd.to_datetime(df["timestamp"])
 

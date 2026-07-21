@@ -34,3 +34,10 @@ def get_cost_summary():
     plt.close()
 
     print("\nChart saved to charts/cost_breakdown.png")
+
+    return {
+    "total_units": total_units,
+    "average_usage": average_units,
+    "rate_per_unit": RATE_PER_UNIT,
+    "estimated_cost": estimated_cost
+    }
