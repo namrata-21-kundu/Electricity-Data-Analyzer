@@ -280,8 +280,9 @@ It also suggests practical ways to reduce electricity consumption based on the a
 
 # 👨‍💻 Author
 
-**Namrata Kundu**
+**Namrata Kundu**    
 
+Contact:
 - GitHub: https://github.com/namrata-21-kundu
 - LinkedIn: https://www.linkedin.com/in/namrata-21-kundu/
 
