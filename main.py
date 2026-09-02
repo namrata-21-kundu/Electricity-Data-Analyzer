@@ -36,7 +36,7 @@ def main():
     args = parser.parse_args()
 
     if args.command == "load":
-        if not args.file:
+        if not args.input:
             print("Please provide a CSV file.")
             return
 
