@@ -7,6 +7,9 @@ def load_csv(file_path):
     connection = connect_db()
     cursor = connection.cursor()
 
+    # Remove the previous dataset
+    cursor.execute("TRUNCATE TABLE readings")
+
     query = """
     INSERT INTO readings(timestamp, usage_kwh)
     VALUES (%s, %s)
