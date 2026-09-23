@@ -1,11 +1,12 @@
 #import os
 #from dotenv import load_dotenv
+
 from google import genai
-from config import GOOGLE_API_KEY, GEMINI_MODEL
+from config import GEMINI_API_KEY, GEMINI_MODEL
 
 #load_dotenv()
 
-client = genai.Client(api_key=GOOGLE_API_KEY)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 def explain(question, analysis_result):
     prompt = f"""
