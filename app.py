@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 
 # Ensure environment variables from .env take precedence
 load_dotenv(override=True)
-if os.getenv("GEMINI_API_KEY") and not os.getenv("GOOGLE_API_KEY"):
-    os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY")
+#if os.getenv("GEMINI_API_KEY") and not os.getenv("GOOGLE_API_KEY"):
+  #  os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY")
 
 # Backend imports (unchanged backend logic)
 from db.connection import connect_db
