@@ -165,6 +165,44 @@ CLI ────────────────┐
 Streamlit ──────────┘
 ```
 ---
+# 📷 Screenshots
+
+## 🌐 Streamlit Interface
+
+![Streamlit Interface](assets/streamlit.png)
+
+## 🤖 AI Assistant
+
+![AI Assistant](assets/ai_assistance.png)
+
+## 🧠 AI Explanation
+
+![AI Explanation](assets/ai_explanation.png)
+
+## 📊 Summary
+
+![Summary](assets/summary.png)
+
+## 📈 Trend Analysis
+
+![Trend Analysis](assets/trend.png)
+
+## 📊 Peak Usage Hours
+
+![Peak Usage](assets/peak_hours.png)
+
+## 💰 Cost Breakdown
+
+![Cost Breakdown](assets/cost_breakdown.png)
+
+## ⚠️ Anomaly Detection
+
+![Anomaly Detection](assets/anomalies.png)
+
+## 🖥️ CLI Demo
+
+![CLI Demo](assets/cli_demo.png)
+---
 # 🛠 Tech Stack
 
 | Category | Technology |
