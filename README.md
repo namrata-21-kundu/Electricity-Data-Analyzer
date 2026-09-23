@@ -80,72 +80,7 @@ The project also includes an interactive Streamlit interface.
 Run the application with:
 ```bash
 streamlit run app.py
----
-
-# 📷 Screenshots
-
-## Trend Analysis
-
-![Trend](assets/trend.png)
-
-## Peak Usage Hours
-
-![Peak Hours](assets/peak_hours.png)
-
-## Cost Breakdown
-
-![Cost](assets/cost_breakdown.png)
-
-## Anomaly Detection
-
-![Anomalies](assets/anomalies.png)
-
-## AI Assistant
-
-![CLI Demo](assets/cli_demo.png)
-
----
-
-# ⚙️ Project Workflow
-
-                    CSV File
-                       │
-                       ▼
-                Load into MySQL
-                       │
-                       ▼
-                Retrieve Data
-                       │
-                       ▼
-              Pandas / NumPy
-                       │
-                       ▼
-          ┌────────────┴────────────┐
-          │                         │
-          ▼                         ▼
-    Data Analytics            Matplotlib
-          │                    Visualizations
-          │
-          ▼
-    Analysis Results
-          │
-          ▼
-     Google Gemini
-          │
-          ▼
-   Natural Language
-      Explanation
-
-The application can be accessed through either:
-
-CLI ────────────────┐
-                    │
-                    ▼
-              Shared Backend
-                    ▲
-                    │
-Streamlit ──────────┘
----
+```
 
 # 📂 Project Structure
 
@@ -188,9 +123,48 @@ ElectricityDataAnalyser/
 ├── requirements.txt
 └── README.md
 ```
-
 ---
+# ⚙️ Project Workflow
 
+```text
+                    CSV File
+                       │
+                       ▼
+                Load into MySQL
+                       │
+                       ▼
+                Retrieve Data
+                       │
+                       ▼
+              Pandas / NumPy
+                       │
+                       ▼
+          ┌────────────┴────────────┐
+          │                         │
+          ▼                         ▼
+    Data Analytics            Matplotlib
+          │                    Visualizations
+          │
+          ▼
+    Analysis Results
+          │
+          ▼
+     Google Gemini
+          │
+          ▼
+   Natural Language
+      Explanation
+
+The application can be accessed through either:
+CLI ────────────────┐
+                    │
+                    ▼
+              Shared Backend
+                    ▲
+                    │
+Streamlit ──────────┘
+```
+---
 # 🛠 Tech Stack
 
 | Category | Technology |
