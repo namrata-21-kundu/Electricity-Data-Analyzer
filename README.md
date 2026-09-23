@@ -1,11 +1,12 @@
 # ⚡ Electricity Data Analyzer
 
-> A Python-based CLI application for analyzing electricity consumption using MySQL, Pandas, Matplotlib, and Google Gemini AI.
+>  A Python-based electricity consumption analytics application with CLI and Streamlit interfaces, MySQL data storage, Pandas-based analysis, Matplotlib visualizations, and Google Gemini AI assistance.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)
 ![Gemini](https://img.shields.io/badge/Google-Gemini%20API-purple)
 ![Status](https://img.shields.io/badge/Status-v1.0-success)
 
@@ -13,66 +14,72 @@
 
 # 📖 Project Overview
 
-Electricity Data Analyzer is a command-line application that transforms raw electricity usage data into meaningful insights.
+Electricity Data Analyzer is a Python-based application that transforms raw electricity usage data into meaningful insights.
 
 Users can upload electricity consumption data from CSV files, store it in a MySQL database, analyze usage patterns, visualize trends, estimate electricity costs, detect anomalies, and receive AI-powered explanations using the Google Gemini API.
 
-The project combines traditional data analytics with Generative AI to make electricity consumption reports easier to understand.
+The project provides both a *command-line interface (CLI)* and a *Streamlit web interface*, allowing users to perform the same analytics through either the terminal or an interactive dashboard.
 
 ---
 
 # ✨ Features
 
 - Upload electricity usage data from CSV files
-- Store data in MySQL
+- Replace the existing dataset when a new CSV is loaded, to avoid redundancy
+- Store and retrieve electricity data using MySQL
 - Analyze electricity consumption trends
 - Detect peak usage hours
 - Estimate electricity bills
 - Detect unusual consumption spikes
-- Automatically generate charts
-- AI-powered natural language explanations using Gemini
+- Generate charts using Matplotlib
+- Interactive Streamlit dashboard
+- AI-powered natural language explanations using Google Gemini
+- CLI-based analytics commands
 - Modular and scalable project architecture
+- Environment-based configuration using `.env`
 
 ---
+# 🖥 Interfaces
 
-# 🖥 Demo
+## Command-Line Interface
 
-## Load CSV
+The original CLI allows users to perform analytics directly from the terminal.
 
+### Load CSV
 ```bash
 python main.py load data/sample_usage.csv
 ```
-
+## Summary
+```bash
+python main.py summary
+```
 ## Trend Analysis
-
 ```bash
 python main.py trend
 ```
-
 ## Peak Hours
-
 ```bash
 python main.py peak
 ```
-
 ## Cost Estimation
-
 ```bash
 python main.py cost
 ```
-
 ## Detect Anomalies
-
 ```bash
 python main.py anomalies
 ```
-
 ## Ask the AI Assistant
-
 ```bash
 python main.py ask "Why was my electricity bill high?"
 ```
+## 🌐 Streamlit Interface
 
+The project also includes an interactive Streamlit interface.
+
+Run the application with:
+```bash
+streamlit run app.py
 ---
 
 # 📷 Screenshots
@@ -101,28 +108,43 @@ python main.py ask "Why was my electricity bill high?"
 
 # ⚙️ Project Workflow
 
-```text
-CSV File
-      │
-      ▼
-Load into MySQL Database
-      │
-      ▼
-Retrieve using SQL
-      │
-      ▼
-Analyze using Pandas & NumPy
-      │
-      ▼
-Generate Charts with Matplotlib
-      │
-      ▼
-User asks a question
-      │
-      ▼
-Google Gemini explains the results
-```
+                    CSV File
+                       │
+                       ▼
+                Load into MySQL
+                       │
+                       ▼
+                Retrieve Data
+                       │
+                       ▼
+              Pandas / NumPy
+                       │
+                       ▼
+          ┌────────────┴────────────┐
+          │                         │
+          ▼                         ▼
+    Data Analytics            Matplotlib
+          │                    Visualizations
+          │
+          ▼
+    Analysis Results
+          │
+          ▼
+     Google Gemini
+          │
+          ▼
+   Natural Language
+      Explanation
 
+The application can be accessed through either:
+
+CLI ────────────────┐
+                    │
+                    ▼
+              Shared Backend
+                    ▲
+                    │
+Streamlit ──────────┘
 ---
 
 # 📂 Project Structure
@@ -162,6 +184,7 @@ ElectricityDataAnalyser/
 ├── .env.example
 ├── config.py
 ├── main.py
+├── app.py
 ├── requirements.txt
 └── README.md
 ```
@@ -174,7 +197,7 @@ ElectricityDataAnalyser/
 |-----------|------------|
 | Programming Language | Python |
 | Database | MySQL |
-| Data Analysis | Pandas, NumPy |
+| Data Analysis | Pandas |
 | Data Visualization | Matplotlib |
 | AI | Google Gemini API |
 | Configuration | python-dotenv |
@@ -250,32 +273,27 @@ It also suggests practical ways to reduce electricity consumption based on the a
 
 # 🚀 Roadmap
 
-## ✅ Version 1.0 (Current)
+## ✅ Version 1.0 — Current
 
 - CLI application
+- Streamlit interface
+- CSV upload
 - MySQL integration
 - Data analytics
+- Trend analysis
+- Peak usage detection
+- Cost estimation
+- Anomaly detection
 - Chart generation
-- AI-powered explanations
+- AI-powered explanations using Gemini
+- Environment-based configuration
 
-## 🔄 Version 2.0 (Planned)
+## 🔄 Future Improvements
 
-- Streamlit dashboard
-- Interactive charts
-- File upload through UI
-- Downloadable reports
-- Enhanced AI assistant
-- Support for natural-language analytics across multiple reports
-
-## 🚀 Version 3.0 (Future Vision)
-
-- Transform the AI assistant into an **agentic AI system**
-- Enable autonomous task planning and execution
-- Allow the assistant to choose and invoke analysis tools automatically
-- Support multi-step reasoning over electricity consumption data
-- Generate comprehensive reports with actionable recommendations
-- Integrate external data sources (e.g., weather or tariff information) for richer insights
-
+- Explore ML-based anomaly detection instead of relying only on statistical thresholds
+- Interactive and more advanced visualizations
+- Support for comparing multiple datasets
+- Additional electricity consumption insights
 ---
 
 # 👨‍💻 Author
